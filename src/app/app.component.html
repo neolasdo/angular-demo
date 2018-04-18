@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto" *appShowAuthed="true">
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+              <a class="nav-link" routerLink="conversations">
+                  <i class="fas fa-square"></i> Conversations
+              </a>
+          </li>
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="nav-link" routerLink="members">
+            <i class="fas fa-users"></i> Members
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto" *appShowAuthed="true">
+        <li class="nav-item">
+            <a href="" class="nav-link" [routerLink]="['/members/profile', currentUser.id]">
+              <i class="fas fa-user"></i> {{ currentUser.email }}
+            </a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="" (click)="logout($event)">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="footer bg-light">
+  <div class="container text-center">
+    <span class="text-muted">&copy; <a href="http://gemvietnam.com">GEMVIETNAM</a></span>
+  </div>
+</footer>

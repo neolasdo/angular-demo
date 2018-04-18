@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-header">
+          <strong>Member Login</strong>
+        </div>
+        <div class="card-body">
+          <form novalidate (ngSubmit)="onSubmit()" #f="ngForm">
+              <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" name="email" ngModel required>    
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" ngModel required>
+              </div>  
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-sign-in-alt"></i> Login
+              </button>
+            </form>            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
