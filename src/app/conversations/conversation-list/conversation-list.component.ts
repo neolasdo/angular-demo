@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConversationListComponent implements OnInit {
 
+  data: Array<any> = [];
   constructor() { }
-
   ngOnInit() {
-  }
+    const req = new XMLHttpRequest();
+    req.open('GET', `assets/data/fake.json`);
 
+    req.onload = () => {
+        this.data = JSON.parse(req.response);
+        console.log(this.data);
+    };
+    req.send();
+  }
 }
